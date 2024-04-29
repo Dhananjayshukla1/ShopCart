@@ -7,13 +7,13 @@ export const productcontext=createContext();
 
 const Context = (props) => {
 
-    const [products,setproduct]=useState(null);
+    const [AllProduct,setAllProduct]=useState(null);
 
     const getProduct=async ()=>{
        
             const {data}=await axios("/products")
-            setproduct(data)
-           console.log(data);
+            setAllProduct(data)
+         
             
         }
 
@@ -24,7 +24,7 @@ const Context = (props) => {
 
 
         
-      return <productcontext.Provider value={[products,setproduct]}>
+      return <productcontext.Provider value={[AllProduct,setAllProduct]}>
       {props.children};
       </productcontext.Provider>
 

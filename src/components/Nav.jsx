@@ -10,9 +10,9 @@ const Nav = () => {
       <ul className='w-[80%]'>
 
       <li className='flex items-center mb-3'><span className='rounded-full mr-2 w-[15px] h-[15px] bg-blue-100'></span>{" "}Cart 1</li>
-      <li className='flex items-center mb-3'><span className='rounded-full mr-2 w-[15px] h-[15px] bg-blue-100'></span>{" "}Cart 2</li>
-      <li className='flex items-center mb-3'><span className='rounded-full mr-2 w-[15px] h-[15px] bg-blue-100'></span>{" "}Cart 3</li>
-      <li className='flex items-center mb-3'><span className='rounded-full mr-2 w-[15px] h-[15px] bg-blue-100'></span>{" "}Cart 4</li>
+      <li className='flex items-center mb-3'><span className='rounded-full mr-2 w-[15px] h-[15px] bg-green-300'></span>{" "}Cart 2</li>
+      <li className='flex items-center mb-3'><span className='rounded-full mr-2 w-[15px] h-[15px] bg-yellow-100'></span>{" "}Cart 3</li>
+      <li className='flex items-center mb-3'><span className='rounded-full mr-2 w-[15px] h-[15px] bg-red-100'></span>{" "}Cart 4</li>
       
       </ul>
        

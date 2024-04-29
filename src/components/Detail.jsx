@@ -1,27 +1,50 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-
+import React, { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import axios from '../utils/axios'
 const Detail = () => {
+  const [Product,setproduct]=useState(" ");
+
+   let {id}=useParams();
+  
+   
+    let singleData= async ()=>{ 
+      try {
+      const {data}=await axios.get( `/products/${id}`)
+      setproduct(data)
+
+      } catch (error) {
+        console.log(error)
+      }
+
+    } 
+  
+
+  useEffect(()=>{
+       singleData();
+       
+  },[])
   return (
     <div className='w-[70%] flex justify-between items-center  h-full  m-auto p-[10%] '>
 
 
     <img 
     className='object-contain h-[100%] w-[40%]' 
-    src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="" /> 
+    src={`${Product.image}`} alt="" /> 
     
     
     <div className='content w-[50%]'>
     <h1 className='text-3xl'>
-          Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
+          {Product.title}
     </h1>
 
-    <h3 className='text-zinc-400 my-5'>Men's Clothing</h3>
+    <h3 className='text-zinc-400 my-5'>{Product.category}</h3>
 
-    <h2 className='text-red-300 mb-3'>109.95</h2>
+    <h2 className='text-red-300 mb-3'>$ {Product.price}</h2>
 
     <p className='mb-[5%]'>
-          Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday
+    {Product.description}
+
+          
     </p>  
     <Link  className='mr-5 py-2 px-5 border border-blue-200 text-blue-200 rounded '>
     Edit
