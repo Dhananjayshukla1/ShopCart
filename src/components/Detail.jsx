@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import axios from '../utils/axios'
+import Loading from '../utils/Loading'
 const Detail = () => {
   const [Product,setproduct]=useState(" ");
 
@@ -23,7 +24,8 @@ const Detail = () => {
        singleData();
        
   },[])
-  return (
+  return Product?(
+    <>
     <div className='w-[70%] flex justify-between items-center  h-full  m-auto p-[10%] '>
 
 
@@ -46,15 +48,19 @@ const Detail = () => {
 
           
     </p>  
-    <Link  className='mr-5 py-2 px-5 border border-blue-200 text-blue-200 rounded '>
+    <Link  className='mr-5 py-2 px-5 border border-blue-200 text-blue-300 rounded '>
     Edit
     </Link>   
-    <Link  className='py-2 px-5 border border-blue-200 text-red-200 rounded '>
-    Delete
+    <Link  className='py-2 px-5 border border-blue-200 text-red-300 rounded '>
+    Delete g
     </Link>
     </div>
     </div>
-  )
+    </>
+  ):(
+    <Loading></Loading>
+    
+  );
 }
 
 export default Detail
