@@ -52,7 +52,7 @@ const Detail = () => {
     Edit
     </Link>   
     <Link  className='py-2 px-5 border border-blue-200 text-red-300 rounded '>
-    Delete g
+    Delete
     </Link>
     </div>
     </div>
